@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1584">
+<title>BrickToken — LinkedIn Banner</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .banner {
+    width: 1584px;
+    height: 396px;
+    position: relative;
+    overflow: hidden;
+    background: #08090d;
+  }
+
+  /* SVG background fills entire banner */
+  .svg-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .svg-bg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Text overlay gradient - left side readable */
+  .text-fade {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: linear-gradient(90deg,
+      rgba(8, 9, 13, 0.95) 0%,
+      rgba(8, 9, 13, 0.85) 18%,
+      rgba(8, 9, 13, 0.55) 35%,
+      rgba(8, 9, 13, 0.15) 50%,
+      transparent 60%
+    );
+  }
+
+  /* Content */
+  .content {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 800px;
+  }
+
+  .logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ef8239;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+  }
+
+  .slogan-main {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.12;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+  }
+
+  .sub-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    max-width: 580px;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+  }
+
+  /* Bottom elements */
+  .bottom-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+  }
+
+  .keywords {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .keyword {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.22);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .kw-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(239, 130, 57, 0.5);
+  }
+
+  .website {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
+  }
+
+  .bottom-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ef8239 0%, rgba(239, 130, 57, 0.5) 35%, transparent 65%);
+    z-index: 11;
+  }
+
+  /* Top-right badge */
+  .badge-top {
+    position: absolute;
+    right: 60px;
+    top: 26px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ef8239;
+    box-shadow: 0 0 8px rgba(239, 130, 57, 0.6);
+  }
+
+  .badge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(239, 130, 57, 0.65);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <!-- SVG 3D Cube Scene -->
+  <div class="svg-bg">
+    <svg viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Ambient glow filter -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="glow-soft" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="20" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="bokeh" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="12"/>
+        </filter>
+        <filter id="bokeh-sm" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="6"/>
+        </filter>
+
+        <!-- Cube face gradients -->
+        <linearGradient id="faceTop" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2a3045"/>
+          <stop offset="100%" stop-color="#1e2438"/>
+        </linearGradient>
+        <linearGradient id="faceFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#181d2a"/>
+          <stop offset="100%" stop-color="#0c0f18"/>
+        </linearGradient>
+        <linearGradient id="faceRight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1f2536"/>
+          <stop offset="100%" stop-color="#12161f"/>
+        </linearGradient>
+        <linearGradient id="faceFrontDark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#141825"/>
+          <stop offset="100%" stop-color="#090c14"/>
+        </linearGradient>
+
+        <!-- Orange edge gradient -->
+        <linearGradient id="edgeGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef8239" stop-opacity="0.9"/>
+          <stop offset="50%" stop-color="#ff9a44" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#ef8239" stop-opacity="0.7"/>
+        </linearGradient>
+        <linearGradient id="edgeGlowH" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ef8239" stop-opacity="0.7"/>
+          <stop offset="50%" stop-color="#ff9a44" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#ef8239" stop-opacity="0.7"/>
+        </linearGradient>
+
+        <!-- Circuit line gradient -->
+        <linearGradient id="circuitH" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ef8239" stop-opacity="0"/>
+          <stop offset="30%" stop-color="#ef8239" stop-opacity="0.7"/>
+          <stop offset="50%" stop-color="#ffa050" stop-opacity="1"/>
+          <stop offset="70%" stop-color="#ef8239" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#ef8239" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="circuitV" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ef8239" stop-opacity="0"/>
+          <stop offset="30%" stop-color="#ef8239" stop-opacity="0.6"/>
+          <stop offset="50%" stop-color="#ffa050" stop-opacity="0.9"/>
+          <stop offset="70%" stop-color="#ef8239" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#ef8239" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Background gradient base -->
+      <rect width="1584" height="396" fill="#08090d"/>
+      <rect width="1584" height="396" fill="url(#ambientGrad)" opacity="0.5"/>
+
+      <!-- Ambient warm glow on right side -->
+      <ellipse cx="1150" cy="200" rx="500" ry="300" fill="#ef8239" opacity="0.06" filter="url(#glow-soft)"/>
+      <ellipse cx="1300" cy="150" rx="350" ry="250" fill="#c06820" opacity="0.08" filter="url(#glow-soft)"/>
+      <ellipse cx="1000" cy="280" rx="300" ry="200" fill="#ef8239" opacity="0.04" filter="url(#glow-soft)"/>
+
+      <!-- ========== ISOMETRIC CUBES ========== -->
+      <!-- Large cube cluster - right center -->
+
+      <!-- CUBE 1: Tall block, right-center -->
+      <g transform="translate(1100, 40)">
+        <!-- Top face (isometric parallelogram) -->
+        <polygon points="60,0 120,30 60,60 0,30" fill="url(#faceTop)" stroke="#ef8239" stroke-width="1.2" stroke-opacity="0.35"/>
+        <!-- Left face -->
+        <polygon points="0,30 60,60 60,210 0,180" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.15"/>
+        <!-- Right face -->
+        <polygon points="60,60 120,30 120,180 60,210" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.2"/>
+        <!-- Bright edge - vertical right -->
+        <line x1="120" y1="30" x2="120" y2="180" stroke="url(#edgeGlow)" stroke-width="2" filter="url(#glow)"/>
+        <!-- Bright edge - top right -->
+        <line x1="60" y1="0" x2="120" y2="30" stroke="#ef8239" stroke-width="1.5" stroke-opacity="0.5" filter="url(#glow)"/>
+        <!-- Bottom edge glow -->
+        <line x1="60" y1="210" x2="120" y2="180" stroke="#ef8239" stroke-width="1" stroke-opacity="0.3" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 2: Medium block, further right -->
+      <g transform="translate(1250, 80)">
+        <polygon points="50,0 100,25 50,50 0,25" fill="url(#faceTop)" stroke="#ef8239" stroke-width="1" stroke-opacity="0.3"/>
+        <polygon points="0,25 50,50 50,170 0,145" fill="url(#faceFrontDark)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.12"/>
+        <polygon points="50,50 100,25 100,145 50,170" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.2"/>
+        <line x1="100" y1="25" x2="100" y2="145" stroke="url(#edgeGlow)" stroke-width="2" filter="url(#glow)"/>
+        <line x1="50" y1="0" x2="100" y2="25" stroke="#ef8239" stroke-width="1.5" stroke-opacity="0.45" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 3: Short wide block, left of cluster -->
+      <g transform="translate(950, 120)">
+        <polygon points="70,0 140,35 70,70 0,35" fill="url(#faceTop)" stroke="#ef8239" stroke-width="1" stroke-opacity="0.3"/>
+        <polygon points="0,35 70,70 70,140 0,105" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.1"/>
+        <polygon points="70,70 140,35 140,105 70,140" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.18"/>
+        <line x1="140" y1="35" x2="140" y2="105" stroke="url(#edgeGlow)" stroke-width="1.8" filter="url(#glow)"/>
+        <line x1="70" y1="0" x2="140" y2="35" stroke="#ef8239" stroke-width="1.2" stroke-opacity="0.4" filter="url(#glow)"/>
+        <line x1="70" y1="140" x2="140" y2="105" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.2"/>
+      </g>
+
+      <!-- CUBE 4: Tall thin block -->
+      <g transform="translate(1380, 50)">
+        <polygon points="40,0 80,20 40,40 0,20" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.25"/>
+        <polygon points="0,20 40,40 40,190 0,170" fill="url(#faceFrontDark)" stroke="#ef8239" stroke-width="0.5" stroke-opacity="0.1"/>
+        <polygon points="40,40 80,20 80,170 40,190" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.7" stroke-opacity="0.15"/>
+        <line x1="80" y1="20" x2="80" y2="170" stroke="url(#edgeGlow)" stroke-width="1.8" filter="url(#glow)"/>
+        <line x1="40" y1="0" x2="80" y2="20" stroke="#ef8239" stroke-width="1" stroke-opacity="0.4" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 5: Medium, mid-left -->
+      <g transform="translate(850, 180)">
+        <polygon points="50,0 100,25 50,50 0,25" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.25"/>
+        <polygon points="0,25 50,50 50,130 0,105" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.5" stroke-opacity="0.08"/>
+        <polygon points="50,50 100,25 100,105 50,130" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.7" stroke-opacity="0.15"/>
+        <line x1="100" y1="25" x2="100" y2="105" stroke="url(#edgeGlow)" stroke-width="1.5" filter="url(#glow)"/>
+        <line x1="50" y1="0" x2="100" y2="25" stroke="#ef8239" stroke-width="1" stroke-opacity="0.35" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 6: Small foreground block -->
+      <g transform="translate(1200, 220)">
+        <polygon points="45,0 90,22 45,45 0,22" fill="url(#faceTop)" stroke="#ef8239" stroke-width="1" stroke-opacity="0.3"/>
+        <polygon points="0,22 45,45 45,120 0,97" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.1"/>
+        <polygon points="45,45 90,22 90,97 45,120" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.2"/>
+        <line x1="90" y1="22" x2="90" y2="97" stroke="url(#edgeGlow)" stroke-width="1.8" filter="url(#glow)"/>
+        <line x1="45" y1="0" x2="90" y2="22" stroke="#ef8239" stroke-width="1.2" stroke-opacity="0.4" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 7: Small background block -->
+      <g transform="translate(1050, 30)">
+        <polygon points="35,0 70,17 35,35 0,17" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.2"/>
+        <polygon points="0,17 35,35 35,85 0,67" fill="url(#faceFrontDark)" stroke="#ef8239" stroke-width="0.4" stroke-opacity="0.08"/>
+        <polygon points="35,35 70,17 70,67 35,85" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.5" stroke-opacity="0.12"/>
+        <line x1="70" y1="17" x2="70" y2="67" stroke="url(#edgeGlow)" stroke-width="1.2" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 8: Far right small -->
+      <g transform="translate(1450, 180)">
+        <polygon points="40,0 80,20 40,40 0,20" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.7" stroke-opacity="0.22"/>
+        <polygon points="0,20 40,40 40,110 0,90" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.4" stroke-opacity="0.08"/>
+        <polygon points="40,40 80,20 80,90 40,110" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.14"/>
+        <line x1="80" y1="20" x2="80" y2="90" stroke="url(#edgeGlow)" stroke-width="1.5" filter="url(#glow)"/>
+      </g>
+
+      <!-- CUBE 9: Ground level wide -->
+      <g transform="translate(1000, 270)">
+        <polygon points="80,0 160,40 80,80 0,40" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.2"/>
+        <polygon points="0,40 80,80 80,120 0,80" fill="url(#faceFrontDark)" stroke="#ef8239" stroke-width="0.5" stroke-opacity="0.08"/>
+        <polygon points="80,80 160,40 160,80 80,120" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.6" stroke-opacity="0.12"/>
+        <line x1="160" y1="40" x2="160" y2="80" stroke="url(#edgeGlow)" stroke-width="1.2" filter="url(#glow)"/>
+        <line x1="80" y1="0" x2="160" y2="40" stroke="#ef8239" stroke-width="0.8" stroke-opacity="0.25"/>
+      </g>
+
+      <!-- CUBE 10: Tiny distant block -->
+      <g transform="translate(1350, 270)">
+        <polygon points="30,0 60,15 30,30 0,15" fill="url(#faceTop)" stroke="#ef8239" stroke-width="0.5" stroke-opacity="0.18"/>
+        <polygon points="0,15 30,30 30,75 0,60" fill="url(#faceFront)" stroke="#ef8239" stroke-width="0.3" stroke-opacity="0.06"/>
+        <polygon points="30,30 60,15 60,60 30,75" fill="url(#faceRight)" stroke="#ef8239" stroke-width="0.4" stroke-opacity="0.1"/>
+        <line x1="60" y1="15" x2="60" y2="60" stroke="url(#edgeGlow)" stroke-width="1" filter="url(#glow)"/>
+      </g>
+
+      <!-- ========== CIRCUIT TRACE LINES ========== -->
+      <line x1="950" y1="155" x2="1100" y2="155" stroke="url(#circuitH)" stroke-width="1.5" filter="url(#glow)"/>
+      <line x1="1090" y1="250" x2="1250" y2="250" stroke="url(#circuitH)" stroke-width="1.5" filter="url(#glow)"/>
+      <line x1="1200" y1="100" x2="1380" y2="100" stroke="url(#circuitH)" stroke-width="1.2" filter="url(#glow)"/>
+      <line x1="850" y1="300" x2="1050" y2="300" stroke="url(#circuitH)" stroke-width="1" filter="url(#glow)"/>
+      <line x1="1300" y1="180" x2="1450" y2="180" stroke="url(#circuitH)" stroke-width="1" filter="url(#glow)"/>
+
+      <!-- Vertical circuit traces -->
+      <line x1="1100" y1="155" x2="1100" y2="250" stroke="url(#circuitV)" stroke-width="1.2" filter="url(#glow)"/>
+      <line x1="1250" y1="100" x2="1250" y2="250" stroke="url(#circuitV)" stroke-width="1" filter="url(#glow)"/>
+      <line x1="950" y1="155" x2="950" y2="260" stroke="url(#circuitV)" stroke-width="1" filter="url(#glow)"/>
+      <line x1="1380" y1="100" x2="1380" y2="180" stroke="url(#circuitV)" stroke-width="0.8" filter="url(#glow)"/>
+
+      <!-- ========== GLOWING JUNCTION DOTS ========== -->
+      <circle cx="1100" cy="155" r="4" fill="#ffa050" filter="url(#glow-strong)" opacity="0.9"/>
+      <circle cx="1250" cy="250" r="3.5" fill="#ffa050" filter="url(#glow-strong)" opacity="0.85"/>
+      <circle cx="1250" cy="100" r="3" fill="#ffa050" filter="url(#glow-strong)" opacity="0.8"/>
+      <circle cx="950" cy="260" r="3.5" fill="#ffa050" filter="url(#glow-strong)" opacity="0.85"/>
+      <circle cx="1380" cy="100" r="2.5" fill="#ffa050" filter="url(#glow-strong)" opacity="0.75"/>
+      <circle cx="1380" cy="180" r="3" fill="#ffa050" filter="url(#glow-strong)" opacity="0.8"/>
+      <circle cx="1450" cy="180" r="2.5" fill="#ffa050" filter="url(#glow)" opacity="0.7"/>
+      <circle cx="1050" cy="300" r="2.5" fill="#ffa050" filter="url(#glow)" opacity="0.7"/>
+      <circle cx="1100" cy="250" r="3" fill="#ffa050" filter="url(#glow-strong)" opacity="0.8"/>
+
+      <!-- ========== BOKEH LIGHT ORBS ========== -->
+      <circle cx="1150" cy="40" r="25" fill="#ef8239" opacity="0.3" filter="url(#bokeh)"/>
+      <circle cx="1350" cy="30" r="18" fill="#ffa050" opacity="0.35" filter="url(#bokeh-sm)"/>
+      <circle cx="1480" cy="60" r="15" fill="#ef8239" opacity="0.25" filter="url(#bokeh-sm)"/>
+      <circle cx="980" cy="50" r="20" fill="#c06820" opacity="0.2" filter="url(#bokeh)"/>
+      <circle cx="1300" cy="320" r="22" fill="#ef8239" opacity="0.15" filter="url(#bokeh)"/>
+      <circle cx="1500" cy="280" r="12" fill="#ffa050" opacity="0.2" filter="url(#bokeh-sm)"/>
+      <circle cx="1050" cy="100" r="10" fill="#ffa050" opacity="0.3" filter="url(#bokeh-sm)"/>
+      <circle cx="900" cy="140" r="14" fill="#ef8239" opacity="0.15" filter="url(#bokeh-sm)"/>
+
+      <!-- ========== GRID FLOOR LINES (perspective) ========== -->
+      <g opacity="0.08" stroke="#ef8239" stroke-width="0.5">
+        <line x1="800" y1="396" x2="1000" y2="300"/>
+        <line x1="850" y1="396" x2="1050" y2="300"/>
+        <line x1="900" y1="396" x2="1100" y2="300"/>
+        <line x1="950" y1="396" x2="1150" y2="300"/>
+        <line x1="1000" y1="396" x2="1200" y2="300"/>
+        <line x1="1050" y1="396" x2="1250" y2="300"/>
+        <line x1="1100" y1="396" x2="1300" y2="300"/>
+        <line x1="1150" y1="396" x2="1350" y2="300"/>
+        <line x1="1200" y1="396" x2="1400" y2="300"/>
+        <line x1="1250" y1="396" x2="1450" y2="300"/>
+        <line x1="1300" y1="396" x2="1500" y2="300"/>
+        <line x1="1350" y1="396" x2="1550" y2="300"/>
+        <!-- Horizontal grid -->
+        <line x1="820" y1="370" x2="1580" y2="310"/>
+        <line x1="840" y1="350" x2="1560" y2="295"/>
+        <line x1="860" y1="330" x2="1540" y2="280"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <!-- Text overlay gradient -->
+  <div class="text-fade"></div>
+
+  <!-- Bottom accent line -->
+  <div class="bottom-line"></div>
+
+  <!-- Top-right badge -->
+  <div class="badge-top">
+    <div class="badge-dot"></div>
+    <span class="badge-text">La Pierre-Liquide</span>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="logo">Bricktoken</div>
+    <div class="slogan-main">
+      L&#8217;avenir de l&#8217;immobilier est<br>
+      sur la blockchain
+    </div>
+    <div class="sub-tagline">
+      D&eacute;couvrez comment la blockchain d&eacute;mocratise l&#8217;investissement<br>
+      immobilier gr&acirc;ce &agrave; la tokenisation
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <div class="keywords">
+      <span class="keyword">Tokenisation</span>
+      <div class="kw-sep"></div>
+      <span class="keyword">ERC-3643</span>
+      <div class="kw-sep"></div>
+      <span class="keyword">RWA</span>
+      <div class="kw-sep"></div>
+      <span class="keyword">Fractionnalisation</span>
+      <div class="kw-sep"></div>
+      <span class="keyword">Smart Contracts</span>
+    </div>
+    <div class="website">www.bricktoken.net</div>
+  </div>
+</div>
+</body>
+</html>

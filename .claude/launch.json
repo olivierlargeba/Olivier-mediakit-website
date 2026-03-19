@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "banner-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/olivierlarge/Olivier-mediakit-website", "-l", "3847"],
+      "port": 3847
+    }
+  ]
+}
