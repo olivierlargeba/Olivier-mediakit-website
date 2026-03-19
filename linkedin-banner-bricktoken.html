@@ -25,38 +25,39 @@
     background: #08090d;
   }
 
-  /* Hero background image - same as bricktoken.net */
+  /* Hero background — exact image from bricktoken.net */
   .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 1;
     background-image: url('hero-bg.jpg');
     background-size: cover;
-    background-position: center 40%;
+    background-position: center center;
     background-repeat: no-repeat;
   }
 
-  /* Subtle darkening overlay for text readability */
+  /* Light overlay — same as website, cubes visible through */
   .overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background:
-      linear-gradient(90deg,
-        rgba(8, 9, 13, 0.55) 0%,
-        rgba(8, 9, 13, 0.3) 25%,
-        rgba(8, 9, 13, 0.1) 45%,
-        transparent 60%
-      ),
-      linear-gradient(180deg,
-        rgba(8, 9, 13, 0.15) 0%,
-        transparent 25%,
-        transparent 75%,
-        rgba(8, 9, 13, 0.35) 100%
-      );
+    background: rgba(8, 9, 13, 0.1);
   }
 
-  /* Content - centered like the website */
+  /* Logo top-left — same position as website */
+  .logo {
+    position: absolute;
+    top: 28px;
+    left: 40px;
+    z-index: 10;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ef8239;
+    letter-spacing: 0.3px;
+  }
+
+  /* Centered content — same as website hero */
   .content {
     position: absolute;
     left: 0;
@@ -65,204 +66,47 @@
     transform: translateY(-50%);
     z-index: 10;
     text-align: center;
-    padding: 0 80px;
+    padding: 0 60px;
   }
 
-  /* Logo top-left */
-  .logo-area {
-    position: absolute;
-    top: 22px;
-    left: 35px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  .logo-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .logo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: #ef8239;
-    letter-spacing: 0.3px;
-  }
-
-  /* Main slogan - Space Grotesk, same as bricktoken.net */
-  .slogan-main {
+  /* Main slogan — Space Grotesk, same as bricktoken.net */
+  .slogan {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.15;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     letter-spacing: -0.5px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.3);
   }
 
-  /* Sub-tagline */
-  .sub-tagline {
+  /* Sub-tagline — Inter light, same as website */
+  .subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
-    letter-spacing: 0.2px;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
-  }
-
-  /* Bottom bar */
-  .bottom-bar {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 44px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    background: linear-gradient(180deg, transparent 0%, rgba(8,9,13,0.5) 100%);
-  }
-
-  .keywords {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .keyword {
-    font-family: 'Inter', sans-serif;
-    font-size: 9.5px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  }
-
-  .kw-sep {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: rgba(239, 130, 57, 0.6);
-  }
-
-  .website {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 1px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  }
-
-  /* Bottom accent line */
-  .bottom-line {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #ef8239 0%, rgba(239, 130, 57, 0.6) 40%, transparent 80%);
-    z-index: 11;
-  }
-
-  /* Top-right badge */
-  .badge-top {
-    position: absolute;
-    right: 40px;
-    top: 26px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid rgba(239, 130, 57, 0.25);
-  }
-
-  .badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #ef8239;
-    box-shadow: 0 0 8px rgba(239, 130, 57, 0.6);
-  }
-
-  .badge-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    color: rgba(239, 130, 57, 0.85);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    letter-spacing: 0.1px;
   }
 </style>
 </head>
 <body>
 <div class="banner">
-  <!-- Actual bricktoken.net hero background -->
   <div class="hero-bg"></div>
   <div class="overlay"></div>
-  <div class="bottom-line"></div>
 
-  <!-- Logo top-left -->
-  <div class="logo-area">
-    <div class="logo-icon">
-      <img src="logo-bricktoken.png" alt="BrickToken">
-    </div>
-    <span class="logo-text">Bricktoken</span>
-  </div>
+  <div class="logo">Bricktoken</div>
 
-  <!-- Top-right badge -->
-  <div class="badge-top">
-    <div class="badge-dot"></div>
-    <span class="badge-text">La Pierre-Liquide</span>
-  </div>
-
-  <!-- Main content - centered -->
   <div class="content">
-    <div class="slogan-main">
+    <div class="slogan">
       L&#8217;avenir de l&#8217;immobilier est<br>
       sur la blockchain
     </div>
-    <div class="sub-tagline">
+    <div class="subtitle">
       D&eacute;couvrez comment la blockchain d&eacute;mocratise l&#8217;investissement immobilier<br>
       gr&acirc;ce &agrave; la tokenisation
     </div>
-  </div>
-
-  <!-- Bottom bar -->
-  <div class="bottom-bar">
-    <div class="keywords">
-      <span class="keyword">Tokenisation</span>
-      <div class="kw-sep"></div>
-      <span class="keyword">ERC-3643</span>
-      <div class="kw-sep"></div>
-      <span class="keyword">RWA</span>
-      <div class="kw-sep"></div>
-      <span class="keyword">Fractionnalisation</span>
-      <div class="kw-sep"></div>
-      <span class="keyword">Smart Contracts</span>
-    </div>
-    <div class="website">www.bricktoken.net</div>
   </div>
 </div>
 </body>
